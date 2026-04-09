@@ -1,40 +1,38 @@
 const focusAreas = [
   {
-    sdg: 'SDG 13',
-    title: 'Climate Action',
-    desc: 'Driving policy, research, and industry shifts toward net-zero and climate-resilient systems.',
-  },
-  {
-    sdg: 'SDG 07',
-    title: 'Clean Energy',
-    desc: 'Accelerating access to affordable, renewable energy through cross-sector innovation.',
+    sdg: 'SDG 03',
+    title: 'Good Health and Well-Being',
+    desc: 'Supporting thoughtful, human-centered ideas that contribute to healthier lives and outcomes',
   },
   {
     sdg: 'SDG 12',
-    title: 'Circular Systems',
-    desc: 'Redesigning production and consumption to eliminate waste and regenerate natural systems.',
+    title: 'Responsible Consumption and Production',
+    desc: 'Encouraging better use of resources, smarter systems, and lower-waste thinking',
+  },
+  {
+    sdg: 'SDG 04',
+    title: 'Quality Education',
+    desc: 'Advancing learning experiences, access, and capability-building with a future-ready lens',
   },
   {
     sdg: 'SDG 09',
-    title: 'Inclusive Innovation',
-    desc: 'Building resilient infrastructure and fostering innovation that leaves no community behind.',
+    title: 'Industry, Innovation, and Infrastructure',
+    desc: 'Building for practical innovation, resilient systems, and sustainable progress',
   },
 ];
 
 const FocusAreas = () => {
   return (
-    <section id="focus" className="w-full bg-white py-28">
+    <section id="focus" className="w-full bg-white py-28 min-h-[100svh] flex flex-col justify-center">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="section-label mb-3">What We Do</div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-paramarsh-dark tracking-tight">
               Our Focus Areas
             </h2>
           </div>
           <p className="text-gray-500 font-sans text-base max-w-xs leading-relaxed">
-            Aligned with the UN SDGs, every initiative we pursue addresses a critical global challenge.
           </p>
         </div>
 

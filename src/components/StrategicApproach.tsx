@@ -1,24 +1,27 @@
 const pillars = [
   {
-    number: '01',
-    title: 'Research-Driven Insights',
-    desc: 'Every solution starts with rigorous analysis. We combine empirical data with deep domain expertise to surface what actually works.',
+    id: 1,
+    image: '/roman_pillar_1.webp',
+    title: 'Research',
+    desc: 'Grounded exploration to understand context, opportunity, and direction',
   },
   {
-    number: '02',
-    title: 'Innovative Solutions',
-    desc: 'We design frameworks that bridge traditional development and modern innovation — scalable, adaptable, and built for real-world impact.',
+    id: 2,
+    image: '/roman_pillar_2.webp',
+    title: 'Innovation',
+    desc: 'Innovation : Translating ideas into thoughtful, future-ready concepts',
   },
   {
-    number: '03',
-    title: 'Scaling Sustainability',
-    desc: 'By aligning with the UN SDGs, we build partnerships that compound over time — turning isolated wins into systemic, lasting change.',
+    id: 3,
+    image: '/roman_pillar_3.webp',
+    title: 'Scale',
+    desc: 'Building with the intent for long-term relevance and wider impact',
   },
 ];
 
 const StrategicApproach = () => {
   return (
-    <section id="approach" className="w-full bg-paramarsh-subDark py-28 relative overflow-hidden">
+    <section id="approach" className="w-full bg-paramarsh-subDark py-28 relative overflow-hidden min-h-[100svh] flex flex-col justify-center">
       {/* Decorative ring */}
       <div
         aria-hidden
@@ -32,12 +35,11 @@ const StrategicApproach = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl mb-20">
-          <div className="section-label mb-3 text-paramarsh-green">How We Work</div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight mb-5">
             Our Strategic Approach
           </h2>
           <p className="text-gray-400 font-sans text-lg leading-relaxed">
-            Research, innovation, and scale — three pillars that underpin everything we do.
+            We believe in shaping ideas with clarity and purpose
           </p>
         </div>
 
@@ -45,29 +47,33 @@ const StrategicApproach = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map((p) => (
             <div
-              key={p.number}
-              className="group bg-white/5 border border-white/8 rounded-2xl p-8 flex flex-col justify-between card-lift hover:bg-white/10 transition-colors duration-300"
+              key={p.id}
+              className="group relative h-80 md:h-96 flex flex-col justify-end p-8 overflow-hidden rounded-2xl bg-paramarsh-subDark border border-white/10 group-hover:border-transparent transition-all duration-500 cursor-default"
             >
-              <div>
-                <span className="text-5xl font-display font-bold text-white/10 leading-none select-none">
-                  {p.number}
-                </span>
-                <h3 className="mt-5 text-xl font-display font-semibold text-white tracking-tight mb-4">
+              {/* Background Pillar Image */}
+              <div className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-100 group-hover:opacity-0 group-hover:scale-105">
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-paramarsh-subDark via-transparent to-transparent opacity-90" />
+              </div>
+
+              {/* Emerging Content */}
+              <div className="relative z-10 flex flex-col opacity-0 translate-y-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:translate-y-0 delay-75">
+                <h3 className="text-2xl font-display font-semibold text-white tracking-tight mb-3">
                   {p.title}
                 </h3>
-                <p className="text-gray-400 font-sans text-sm leading-relaxed">
+                <p className="text-gray-400 font-sans text-sm leading-relaxed mb-6">
                   {p.desc}
                 </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-paramarsh-green link-underline w-fit"
+                >
+                  Learn More
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
               </div>
-              <a
-                href="#"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-paramarsh-green link-underline w-fit"
-              >
-                Learn More
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
             </div>
           ))}
         </div>

@@ -1,10 +1,4 @@
-const navLinks = [
-  { label: 'Focus Areas', href: '#focus' },
-  { label: 'Approach', href: '#approach' },
-  { label: 'Initiatives', href: '#initiatives' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
-];
+
 
 const Footer = () => {
   return (
@@ -18,22 +12,11 @@ const Footer = () => {
               Paramarsh
             </div>
             <p className="text-sm text-gray-400 font-sans leading-relaxed">
-              Advancing sustainable systems through research, innovation, and collaboration.
+              Advancing sustainable systems through research, innovation, and collaboration
             </p>
           </div>
 
-          {/* Nav links */}
-          <div className="flex flex-wrap gap-x-8 gap-y-3 items-start">
-            {navLinks.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors font-sans link-underline"
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+
 
           {/* Social */}
           <div className="flex items-center gap-4">
@@ -58,7 +41,7 @@ const Footer = () => {
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} Paramarsh. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Paramarsh  All rights reserved</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gray-400 transition-colors">Terms of Service</a>

@@ -23,8 +23,8 @@ const slides = [
   },
 ];
 
-const INTERVAL_MS = 4500;
-const FADE_DURATION_MS = 700;
+const INTERVAL_MS = 2500;
+const FADE_DURATION_MS = 600;
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -60,7 +60,7 @@ const Hero = () => {
       {/* Soft decorative blob */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-30"
+        className="hidden md:block pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-30"
         style={{ background: 'radial-gradient(circle, #2ecc71 0%, transparent 70%)' }}
       />
 
@@ -68,7 +68,6 @@ const Hero = () => {
 
         {/* ── Text Side ── */}
         <div className="w-full lg:w-[42%] lg:flex-shrink-0 space-y-7 lg:pr-8 xl:pr-12">
-          <div className="section-label">Sustainable Systems</div>
 
           <h1 className="text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-paramarsh-dark leading-[1.05] tracking-tight">
             Building a more<br />
@@ -78,20 +77,20 @@ const Hero = () => {
             >
               responsible
             </span>{' '}
-            future.
+            future
           </h1>
 
           <p className="text-lg text-gray-500 font-sans leading-relaxed max-w-lg">
             Advancing sustainable systems through research,<br className="hidden sm:block" />
-            innovation, and cross-sector collaboration.
+            innovation, and cross-sector collaboration
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="#focus"
+              href="#approach"
               className="inline-flex items-center gap-2 bg-paramarsh-dark text-white text-sm font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(14,38,52,0.25)]"
             >
-              Our Strategic Impact
+              Our Strategic Approach
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
