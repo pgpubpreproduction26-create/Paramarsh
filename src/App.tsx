@@ -8,20 +8,50 @@ import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+// Custom scroll function for slower, controlled easing
+const smoothScrollTo = (targetPosition: number, duration: number) => {
+  const startPosition = window.scrollY;
+  const distance = targetPosition - startPosition;
+  let startTime: number | null = null;
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    // easeInOutCubic for a very smooth acceleration and deceleration
+    const ease = progress < 0.5
+      ? 4 * progress * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
 function App() {
   const [autoScroll, setAutoScroll] = useState(true);
 
   useEffect(() => {
     if (!autoScroll) return;
 
-    // Force auto-scroll every 2 seconds
+    // Force auto-scroll every 4 seconds
     const interval = setInterval(() => {
-      if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      const isAtBottom = Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+
+      if (isAtBottom) {
+        // Scroll back to top gracefully over 1.5 seconds
+        smoothScrollTo(0, 1500);
       } else {
-        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        // Scroll down one viewport gracefully over 1.2 seconds
+        smoothScrollTo(window.scrollY + window.innerHeight, 1200);
       }
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [autoScroll]);

@@ -28,9 +28,9 @@ const Navbar = () => {
         .map(id => document.getElementById(id))
         .filter(el => el !== null)
         .sort((a, b) => {
-           const rectA = a!.getBoundingClientRect();
-           const rectB = b!.getBoundingClientRect();
-           return rectA.top - rectB.top;
+          const rectA = a!.getBoundingClientRect();
+          const rectB = b!.getBoundingClientRect();
+          return rectA.top - rectB.top;
         });
 
       let currentSection = '';
@@ -44,12 +44,12 @@ const Navbar = () => {
           }
         }
       }
-      
+
       // Fallback: If we're at the very top, set the first sorted section active
       if (window.scrollY < 50 && sections.length > 0) {
         currentSection = `#${sections[0]!.id}`;
       }
-      
+
       setActiveLink(currentSection);
     };
 
@@ -95,27 +95,18 @@ const Navbar = () => {
           {/* Logo Lockup */}
           <a
             href="#"
-            className="flex items-center gap-3 flex-shrink-0 group focus:outline-none"
+            className="flex items-center gap-0 flex-shrink-0 group focus:outline-none"
             aria-label="Paramarsh home"
           >
-            {/* Inline Vector Logo Mark */}
-            <svg
-              className="h-8 md:h-9 lg:h-10 w-auto shrink-0 text-paramarsh-dark"
-              viewBox="0 0 100 100"
-              fill="currentColor"
-            >
-              {/* Left Flame Stem */}
-              <path d="M 33 15 L 46 15 L 46 38 C 28 48 28 70 40 95 C 10 80 8 45 20 25 C 24 18 28 15 33 15 Z" />
-
-              {/* Top-Right Green Head (Disconnected) */}
-              <path d="M 50 15 L 85 15 L 85 45 L 66 45 L 66 32 L 50 32 Z" fill="#2ecc71" className="group-hover:brightness-110 transition-all duration-200" />
-
-              {/* Bottom-Right Bowl */}
-              <path d="M 66 53 L 85 53 C 85 85 60 95 46 86 L 46 68 C 60 70 66 65 66 53 Z" />
-            </svg>
+            {/* Paramarsh Symbol Image */}
+            <img 
+              src="/PARAMARSH_symbol_color.png" 
+              alt="Paramarsh Logo Mark" 
+              className="h-12 md:h-14 lg:h-16 w-auto shrink-0 object-contain group-hover:scale-[1.03] transition-transform duration-200"
+            />
 
             {/* Typography */}
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center -ml-4">
               <span className="text-xl md:text-2xl font-display font-black text-paramarsh-dark uppercase tracking-tight leading-[0.9] group-hover:text-paramarsh-green transition-colors duration-200">
                 Paramarsh
               </span>

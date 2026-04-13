@@ -67,11 +67,14 @@ const Careers = () => {
         {/* ── CTA Banner ── */}
         <div className="mt-16 rounded-2xl bg-paramarsh-subDark px-8 py-12 md:px-14 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight mb-2">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-white tracking-tight mb-6">
               Don't see the right role?
             </h3>
+
+
             <p className="text-gray-400 font-sans text-base">
-              We're always looking for exceptional people<br className="hidden md:block" />Send us a speculative application
+              We're always looking for exceptional people
+              <span className="block mt-2 md:mt-3">Send us a speculative application</span>
             </p>
           </div>
           <a

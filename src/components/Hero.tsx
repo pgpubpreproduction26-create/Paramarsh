@@ -23,8 +23,8 @@ const slides = [
   },
 ];
 
-const INTERVAL_MS = 2500;
-const FADE_DURATION_MS = 600;
+const INTERVAL_MS = 2600;
+const FADE_DURATION_MS = 700;
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);

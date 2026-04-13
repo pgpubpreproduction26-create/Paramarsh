@@ -7,10 +7,10 @@ const About = () => {
           <div className="lg:w-2/5 flex items-center justify-start relative group">
             {/* Subtle glow underneath to enhance blending */}
             <div className="hidden md:block absolute top-1/2 left-0 md:left-12 -translate-y-1/2 w-48 h-48 bg-paramarsh-green/10 blur-[60px] rounded-full pointer-events-none transition-opacity duration-700 group-hover:opacity-100 opacity-60" />
-            
-            <img 
-              src="/logo.png" 
-              alt="About Paramarsh" 
+
+            <img
+              src="/logo.png"
+              alt="About Paramarsh"
               className="w-48 md:w-56 h-auto object-contain relative z-10 transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
               style={{
                 maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 65%)',
@@ -32,7 +32,7 @@ const About = () => {
         <div className="overflow-hidden group flex justify-center items-center py-4 relative">
           {/* Glowing Effect Background */}
           <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-amber-400/30 blur-[80px] rounded-full pointer-events-none transition-opacity duration-700 group-hover:opacity-50"></div>
-          
+
           <img
             src="/globe-hands-light.png"
             alt="Hands holding a glowing globe"
